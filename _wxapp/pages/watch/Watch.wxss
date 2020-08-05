@@ -1,0 +1,33 @@
+.container{
+  background-color: #0dc1ae;
+  filter: opacity(0.2);
+  width: 100%;
+  height: 100%;
+}
+.ui-row{
+  margin:40rpx;
+}
+.ui-col{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background-color: #797979;
+  height: 300rpx;
+  filter: opacity(0.2);
+  border-radius:20%;
+}
+.column-content{
+  color: white;
+  margin-top: 20rpx;
+  text-align: center;
+}
+.column-content span{
+  font-size: 130rpx;
+}
+.column-content text{
+  font-size: 36rpx;
+}
+.menu{
+  position: absolute;
+  top: 140rpx;
+  width: 100%;
+}

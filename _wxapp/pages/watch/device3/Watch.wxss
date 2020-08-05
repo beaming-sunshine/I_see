@@ -1,0 +1,10 @@
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0dc1ae;
+  text-align: center;
+}
+.text_content{
+  margin-left: 80rpx;
+  padding-right: 80rpx;
+}

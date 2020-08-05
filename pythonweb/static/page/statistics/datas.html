@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>流量统计</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/main.css" media="all" />
+	<link rel="stylesheet" href="../../css/bootstrap.min.css" media="all" />
+	<script type="text/javascript" src="../../js/echarts.js"></script>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/laydate.js"></script>
+</head>
+<body class="childrenBody">
+	
+
+	<div class="container">
+		<ul class="nav nav-pills nav-tabs" id="nav" role="tablist">
+			<li role="presentation" class="active"><a href="#today" aria-controls="today" role="tab" data-toggle="tab">今天</a></li>
+			<li role="presentation"><a href="#yesterday" aria-controls="yesterday" role="tab" data-toggle="tab">昨天</a></li>
+			<li role="presentation"><a href="#date" aria-controls="date" role="tab" data-toggle="tab" id="data">选择日期 <span class="glyphicon glyphicon-calendar"></span></a></li>
+
+		</ul>
+
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="today">
+				<div class="container chart">
+					<div class="col-md-6 col-xs-12" >
+						<div class="shadow_card">
+							<div id="chart1"></div>
+						</div>
+						
+					</div>
+					<div class="col-md-6 col-xs-12">
+						<div class="shadow_card">
+							<div id="chart2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="yesterday">
+				<div class="container chart">
+					<div class="col-md-6 col-xs-12" >
+						<div class="shadow_card">
+							<div id="chart3"></div>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-12">
+						<div class="shadow_card">
+							<div id="chart4"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="date">
+				<div class="container chart">
+					<div class="col-md-6 col-xs-12" >
+						<div class="shadow_card">
+							<div id="chart5"></div>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-12">
+						<div class="shadow_card">
+							<div id="chart6"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-md-4 stats-info">
+			<div class="shadow_card"  style="margin-top: 20px; margin-left: 15px;">
+				<div class="panel-heading">
+					<h4 class="panel-title">地点告警次数排序</h4>
+				</div>
+				<div class="panel-body">
+					<ul class="list-unstyled">
+						<li>食堂<div class="text-danger pull-right">1<span class="glyphicon glyphicon-arrow-up"></span></div></li>
+						<li>教学楼门口<div class="text-success pull-right">2<span class="glyphicon glyphicon-arrow-down"></span></div></li>
+						<li>eda实验室<div class="text-success pull-right">3<span class="glyphicon glyphicon-minus"></span></div></li>
+					</ul>
+				</div>
+			</div>
+			<div class="shadow_card"  style="margin-top: 30px; margin-left: 15px;">
+				<div class="panel-heading">
+					<h4 class="panel-title">人流量排序</h4>
+				</div>
+				<div class="panel-body">
+					<ul class="list-unstyled">
+						<li>食堂<div class="text-danger pull-right">1<span class="glyphicon glyphicon-arrow-up"></span></div></li>
+						<li>教学楼门口<div class="text-success pull-right">2<span class="glyphicon glyphicon-arrow-down"></span></div></li>
+						<li>eda实验室<div class="text-success pull-right">3<span class="glyphicon glyphicon-minus"></span></div></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-5 stats-info">
+			<div class="shadow_card" style="margin-top: 20px;">
+				<div class="panel-heading">
+					<h4 class="panel-title">预测高峰</h4>
+				</div>
+				<div class="panel-body">
+					<ul class="list-unstyled">
+						<li>食堂12:00<div class="text-danger pull-right">72%<span class="glyphicon glyphicon-arrow-up"></span></div></li>
+						<li>食堂18:00<div class="text-danger pull-right">68%<span class="glyphicon glyphicon-arrow-up"></span></div></li>
+						<li>教学楼门口12:00<div class="text-danger pull-right">65%<span class="glyphicon glyphicon-arrow-up"></span></div></li>
+						<li>教学楼门口18:00<div class="text-danger pull-right">47%<span class="glyphicon glyphicon-arrow-up"></span></div></li>
+						<li>教学楼门口8:00<div class="text-success pull-right">37%<span class="glyphicon glyphicon-arrow-down"></span></div></li>
+						<li>食堂8:00<div class="text-danger pull-right">34%<span class="glyphicon glyphicon-arrow-up"></span></div></li>
+						<li>教学楼门口16:00<div class="text-success pull-right">21%<span class="glyphicon glyphicon-arrow-down"></span></div></li>
+						<li>eda实验室21:00<div class="text-success pull-right">20%<span class="glyphicon glyphicon-arrow-down"></span></div></li>
+						<li>eda实验室15:00<div class="text-danger pull-right">10%<span class="glyphicon glyphicon-arrow-up"></span></div></li>
+						<li class="last">其他<div class="text-success pull-right">5%<span class="glyphicon glyphicon-minus"></span></div></li> 
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-3">
+			<div class="widget_1_box" style="padding-top: 20px;">
+				<div class="wid-social skype">
+					<div class="social-info">
+						<h3 class="number_counter bold count text-light start_timer counted">TIPS</h3><br>
+						<span class="percent">请在午饭或晚饭期间人流量较大的时间段，加强对食堂人员流动的监管，防止发生不必要的事故。</span>
+					</div>
+				</div>
+			</div>
+			<div class="widget_1_box" style="padding-top: 20px;">
+				<div class="wid-social blue1">
+					<div class="social-info">
+						<h3 class="number_counter bold count text-light start_timer counted">TIPS</h3><br>
+						<span class="percent">请在上午上下课间人流量较大的时间段，加强对教学楼门口人员流动的监管。</span>
+					</div>
+				</div>
+			</div>
+			<div class="widget_1_box" style="padding-top: 20px;">
+				<div class="wid-social red">
+					<div class="social-info">
+						<h3 class="number_counter bold count text-light start_timer counted">TIPS</h3><br>
+						<span class="percent">请安排较多的保安人员在食堂、教学楼门口周围，以防止发生意外时人员救场不及时。</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="datas.js"></script>
+	<script type="text/javascript" src="../../layui/layui.js"></script>	
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

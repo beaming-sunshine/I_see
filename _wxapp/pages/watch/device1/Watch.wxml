@@ -1,0 +1,17 @@
+<view class='navbar_normal'>
+  <span class="ui-icon icon-arrow-left" bindtap="navagate"></span>
+</view>
+
+<view>
+    <video src='http://hls01open.ys7.com/openlive/05c3392e395f477796341be7f2541f8b.hd.m3u8'></video>
+</view>
+<view class='br'></view>
+<view class="sample_content">
+  <view class="title">设备简介</view>
+  <ui-summary height="80" animate="{{false}}">
+  <view class='text_content'>
+  <text space='emsp'>\n   该摄像头位于eda实验室。由于摄像头需要有稳定的网络支撑与电源供应，故将摄像头安装于eda实验室的一个位置，用于实时监测摄像头捕捉到的视频中人流量（人头个数），显示算法的识别正确率。</text>
+  </view>
+    
+  </ui-summary>
+</view>

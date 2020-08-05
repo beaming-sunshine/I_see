@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>实时监管</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<script type="text/javascript" src="../../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+</head>
+<body>
+	<div class="demoTable" style="padding-left: 20px;padding-top: 10px;">
+		搜索时间：
+		<div class="layui-inline">
+			<input class="layui-input" name="keyword" id="demoReload" autocomplete="off">
+		</div>
+		<button class="layui-btn" data-type="reload">搜索</button>
+	</div>
+
+	<table class="layui-table msg_box" lay-skin="line">
+		<colgroup>
+			<col width="30%">
+			<col width="30%">
+			<col>
+		</colgroup>
+		<thead>
+			<tr>
+				<th style="text-align: center;">异常视频url</th>
+				<th style="text-align: center;">具体日期时间</th>
+				<th style="text-align: center;">操作</th>
+			</tr>
+		</thead>
+		<tbody class="msgHtml"></tbody>
+	</table>
+
+	<div id="pageDemo" style="text-align: center;"></div>
+
+
+	<script type="text/javascript">
+
+		layui.use(['laypage','layer'],function(){
+
+			$ = layui.jquery;
+			var laypage = layui.laypage;
+			
+			//加载数据
+			$.get("/db",function(data){
+				msgHtml = '';
+				var datas = JSON.parse(data)
+				var num = datas.length;
+				var count = num-40;
+				laypage.render({
+					elem: 'pageDemo' 
+					,count: count
+					,limit:8
+					,jump: function(obj,first){
+						msgHtml = '';
+						var limits;
+						if (obj.limit*obj.curr>count) {
+							limits = count;
+						}else{
+							limits = obj.limit*obj.curr;
+						}
+						for(var i = num-1-obj.limit*(obj.curr-1);i>num-1-limits;i--){
+							var Dates = datas[i].date.replace(/\_/g,"-")
+							var Times = datas[i].time.replace(/\_/g,":")
+							msgHtml += '<tr>';
+							msgHtml += '  <td class="msg_time" style="text-align: center;">'+datas[i].filepath+'</td>';
+							msgHtml += '  <td class="msg_reply" style="text-align: center;">'+Dates+' '+Times+'</td>';
+							msgHtml += '  <td class="msg_opr" style="text-align: center;">';
+							msgHtml += '    <a class="layui-btn layui-btn-primary layui-btn-xs" data-id="'+datas[i].filepath+'" onclick="seeVideos(this);">查看</a>';
+							msgHtml += '    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>';
+							msgHtml += '    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>';
+							msgHtml += '  </td>';
+							msgHtml += '</tr>';
+						}
+						$(".msgHtml").html(msgHtml);
+					}
+				});
+			});
+			
+		})
+		
+
+		function seeVideos(e){
+			abnvideo_url = e.getAttribute("data-id");
+			console.log(abnvideo_url)
+			localStorage.setItem("video", abnvideo_url);
+			var index = layer.open({
+				title : "查看异常视频",
+				type : 2,
+				content : "showVideo.html"
+			})
+			$(window).resize(function(){
+				layer.full(index);
+			})
+			layer.full(index);
+		}
+
+		function showVideo(){
+			abnvideo_url = localStorage.getItem("video");
+			console.log(abnvideo_url)
+			videos.innerHTML = '<source src="'+abnvideo_url+'" type="video/mp4" /><object data="'+abnvideo_url+'" type="video/mp4" style="width: 100%;height: 100%;"><embed src="'+abnvideo_url+'" type="video/mp4" style="width: 100%;height: 100%;"/></object>'
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>查看设备</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/news.css" media="all" />
+</head>
+<body class="childrenBody">
+	<blockquote class="layui-elem-quote news_search">
+		<div class="layui-inline">
+		    <div class="layui-input-inline">
+		    	<input type="text" value="" placeholder="请输入关键字" class="layui-input search_input">
+		    </div>
+		    <a class="layui-btn search_btn">查询</a>
+		</div>
+		<div class="layui-inline">
+			<a class="layui-btn layui-btn-normal newsAdd_btn">添加设备</a>
+		</div>
+		<div class="layui-inline">
+			<a class="layui-btn layui-btn-danger batchDel">删除设备</a>
+		</div>
+	</blockquote>
+	<div class="layui-form news_list">
+	  	<table class="layui-table">
+            <colgroup>
+                <col width="50">
+                <col>
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" id="allChoose"></th>
+                    <th style="text-align:left;">设备名称</th>
+                    <th>设备情况</th>
+                    <th>安装地点</th>
+                    <th>安装时间</th>
+                    <th>监管人员</th>
+                    <th>联系方式</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="" lay-skin="primary" lay-filter="choose" id="allChoose"></td>
+                    <td>萤石摄像头</td>
+                    <td>良好</td>
+                    <td>eda实验室</td>
+                    <td>2019-05-11</td>
+                    <td>李好洋</td>
+                    <td>18761155253</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" lay-skin="primary" lay-filter="choose" id="allChoose"></td>
+                    <td>萤石摄像头</td>
+                    <td>良好</td>
+                    <td>食堂</td>
+                    <td>2019-05-29</td>
+                    <td>秦瑜恒</td>
+                    <td>18205027370</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" lay-skin="primary" lay-filter="choose" id="allChoose"></td>
+                    <td>萤石摄像头</td>
+                    <td>良好</td>
+                    <td>教学楼门口</td>
+                    <td>2019-06-01</td>
+                    <td>黄家名</td>
+                    <td>15161150589</td>
+                </tr>
+            </tbody>
+            <tbody class="news_content"></tbody>
+        </table>
+	</div>
+	<div id="page"></div>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	<script type="text/javascript" src="newsList.js"></script>
+</body>
+</html>

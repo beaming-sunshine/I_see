@@ -1,0 +1,53 @@
+<view class='container'>
+  <view class='navbar_normal'>
+    <span class="ui-icon icon-arrow-left" bindtap="navagate"></span>
+  </view>
+
+  <view class='echart1'>
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec1 }}"></ec-canvas>
+  </view>
+
+  <view class='hr'></view>
+  <view class='hr'></view>
+  <view class='segment'>
+  <ui-segment bindchange="changTab">
+    <ui-segment-item>
+      今日
+    </ui-segment-item>
+    <ui-segment-item>
+      近一周
+    </ui-segment-item>
+    <ui-segment-item>
+      近一月
+    </ui-segment-item>
+    <ui-segment-item>
+      <span class="ui-icon icon-magnifier"></span>
+    </ui-segment-item>
+  </ui-segment>
+  </view>
+
+  <view class="tabContent" wx:if="{{contentshow === 0}}">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec3 }}"></ec-canvas>
+  </view>
+
+  <view class="tabContent" wx:if="{{contentshow === 1}}">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec2 }}"></ec-canvas>
+  </view>
+  <view class="tabContent" wx:if="{{contentshow === 2}}">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec4 }}"></ec-canvas>
+  </view>
+  <view class="tabContent" wx:if="{{contentshow === 3}}">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec5 }}"></ec-canvas>
+  </view>
+
+
+  <view class='hr'></view>
+  <view class='hr'></view>
+  <view class='hr'></view>
+</view>
+
+
+
+
+
+  

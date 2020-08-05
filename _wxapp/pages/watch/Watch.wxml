@@ -1,0 +1,46 @@
+<view class='navbar_normal'>
+  <span class="ui-icon icon-arrow-left" bindtap="navagate"></span>
+</view>
+
+<view class='container'></view>
+<view class='menu'>
+<view class="ui-row">
+  <view class="ui-col">
+    <view class="ui-col-content" bindtap='watch1'>
+      <view class="column-content">
+      <span class="ui-icon icon-template"></span>
+      <text>\neda实验室</text>
+      </view>
+    </view>
+  </view>
+  <view class="ui-col">
+    <view class="ui-col-content" bindtap='watch2'>
+      <view class="column-content">
+      <span class="ui-icon icon-phiz"></span>
+      <text>\n食堂</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="ui-row">
+  <view class="ui-col">
+    <view class="ui-col-content" bindtap='watch3'>
+      <view class="column-content">
+      <span class="ui-icon icon-qn-camera"></span>
+      <text>\n教学楼门口</text>
+      </view>
+    </view>
+  </view>
+  <view class="ui-col">
+    <view class="ui-col-content">
+      <view class="column-content">
+        <span class="ui-icon icon-plus2"></span>
+        <text>\n添加</text>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+
+
+

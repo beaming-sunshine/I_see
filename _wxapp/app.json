@@ -1,0 +1,25 @@
+{
+
+  "pages": [
+    "pages/home/HomePage",
+    "pages/messages/Messages",
+    "pages/personal/PersonalPage",
+    "pages/personal/Suggestions/suggestions",
+    "pages/devices/MyDevices",
+    "pages/statistics/Charts",
+    "pages/watch/Watch",
+    "pages/watch/device1/Watch",
+    "pages/watch/device2/Watch",
+    "pages/watch/device3/Watch"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#efefef",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "sitemapLocation": "sitemap.json"
+}

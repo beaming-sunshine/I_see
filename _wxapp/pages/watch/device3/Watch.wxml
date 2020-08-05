@@ -1,0 +1,16 @@
+<view class='navbar_normal'>
+  <span class="ui-icon icon-arrow-left" bindtap="navagate"></span>
+</view>
+
+<view>
+    <video src='http://www.beamingsunshine.cn/result/result03.mp4'></video>
+</view>
+<view class='br'></view>
+<view class="sample_content">
+  <view class="title">设备简介</view>
+  <ui-summary height="80" animate="{{false}}">
+  <view class='text_content'>
+  <text space='emsp'>\n  该摄像头位于学校教学楼门口。由于学校仅有两幢教学楼，所以上下学或课间时间即人流量高发期。管理员可以通过此摄像头对人流量实时监控并采取及时的疏导措施，避免不必要的安全隐患。</text>
+  </view>
+  </ui-summary>
+</view>

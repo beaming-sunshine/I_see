@@ -1,0 +1,46 @@
+<view class='navbar_normal'>
+  <span class="ui-icon icon-arrow-left" bindtap="navagate"></span>
+</view>
+
+<view>
+  <ui-accordion wx:for="{{ accordion }}">
+
+    <view slot="header">
+      <view class="title ui-row ui-row-border-bottom">
+        <view class="ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px;">
+          <view class="ui-col-content align-left valign-middle">
+            {{ item.title }}
+          </view>
+        </view>
+        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 60px;">
+          <view class="ui-col-content align-center valign-middle">
+            {{ item.number }}项
+          </view>
+        </view>
+        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 60px;">
+          <view class="ui-col-content align-center valign-middle">
+            <view class="state {{ item.state }}" wx:if="{{ item.state==='abnormal' }}">{{ item.stateNum }}项异常</view>
+            <view class="state {{ item.state }}" wx:else>全部正常</view>
+          </view>
+        </view>
+        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0  30px;">
+          <view class="ui-col-content align-center valign-middle"></view>
+        </view>
+      </view>
+    </view>
+
+    <view slot="content">
+      <view wx:for="{{ item.content }}" wx:for-item="item2" class="content ui-row">
+        <view class="ui-col ui-col-align-left align-left valign-middle">
+        <span class="ui-icon icon-x"></span>
+          <view class="ui-col-content align-left valign-middle">{{ item2.title }}</view>
+        </view>
+        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 50px;">
+          <view class="ui-col-content align-center valign-middle">
+          </view>
+        </view>
+      </view>
+    </view>
+    
+  </ui-accordion>
+</view>

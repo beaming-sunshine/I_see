@@ -1,0 +1,33 @@
+.login-page {
+	width: 1000px;
+	padding: 20px 0 0;
+	margin: auto;
+}
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 1000px;
+	margin: 0 auto 10px;
+	padding: 25px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+body {
+	background: #1AA094; /* fallback for old browsers */
+	background: -webkit-linear-gradient(right, #1AA094;, #8DC26F);
+	background: -moz-linear-gradient(right, #1AA094;, #8DC26F);
+	background: -o-linear-gradient(right, #1AA094;, #8DC26F);
+	background: linear-gradient(to left, #1AA094;, #8DC26F);
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+img{
+	width: 100%;
+}
+p.center {
+	color: #1AA094;
+	font-size: 30px;
+	font-family: "Microsoft YaHei";
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ui-summary": "../../../packages/touchui-wx-components/ui-summary/dist/index"
+  }
+}
